@@ -1,0 +1,39 @@
+{
+  "name": "langgraph-hierarchical-agent",
+  "version": "1.0.0",
+  "description": "LangGraph hierarchical agent system with Weaviate and Google Gemini",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "setup-db": "node src/database/weaviate-setup.js",
+    "check-db": "node src/database/check-connection.js",
+    "test:gemini": "node src/llm/gemini-client.js",
+    "test:chart": "node src/tools/chartjs-tool.js",
+    "test:rag": "node src/agents/rag-agent.js",
+    "test:delegating": "node src/agents/delegating-agent.js",
+    "test:graph": "node src/graph/agent-graph.js",
+    "test:all": "npm run test:rag && npm run test:chart && npm run test:delegating && npm run test:graph"
+  },
+  "keywords": [
+    "langgraph",
+    "langchain",
+    "weaviate",
+    "gemini",
+    "rag",
+    "agent"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@langchain/community": "^0.3.15",
+    "@langchain/core": "^0.3.21",
+    "@langchain/google-genai": "^0.1.5",
+    "@langchain/langgraph": "^0.2.21",
+    "dotenv": "^16.4.7",
+    "langchain": "^0.3.6",
+    "weaviate-client": "^3.2.0",
+    "zod": "^3.25.0"
+  }
+}
+
